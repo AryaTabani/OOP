@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="card_form" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="230.0" stylesheets="@cardDesign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectgraphic.cardProductController">
+    <children>
+        <VBox layoutX="65.0" layoutY="-10.0" prefHeight="180.0" prefWidth="230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="29.0" prefWidth="230.0">
+                    <children>
+                        <Label fx:id="prod_name" prefHeight="21.0" prefWidth="91.0" text="Spaghetti">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="25.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label fx:id="prod_price" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="41.0" text="\$0.0">
+                            <HBox.margin>
+                                <Insets right="25.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                  <TextField fx:id="Score" editable="false" prefHeight="31.0" prefWidth="54.0" />
+                    </children>
+                </HBox>
+                <AnchorPane prefHeight="101.0" prefWidth="230.0">
+                    <children>
+                        <ImageView fx:id="prod_imageView" fitHeight="94.0" fitWidth="157.0" layoutX="20.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+                  <TextField fx:id="Score1" layoutX="177.0" layoutY="72.0" prefHeight="31.0" prefWidth="54.0" />
+                    </children>
+                </AnchorPane>
+                <HBox alignment="CENTER" prefHeight="48.0" prefWidth="240.0">
+                    <children>
+                        <Spinner fx:id="prod_spinner" prefHeight="31.0" prefWidth="84.0">
+                            <HBox.margin>
+                                <Insets right="10.0" />
+                            </HBox.margin>
+                        </Spinner>
+                        <Button fx:id="prod_addBtn" mnemonicParsing="false" onAction="#addBtn" prefHeight="31.0" prefWidth="67.0" styleClass="btn" stylesheets="@cardDesign.css" text="Add" />
+                  <Button fx:id="Commetbtn" mnemonicParsing="false" onAction="#addcomment" prefHeight="31.0" prefWidth="41.0" styleClass="btn" stylesheets="@cardDesign.css" text="C" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+      <AnchorPane fx:id="Commentpart" layoutX="-46.0" layoutY="180.0" prefHeight="198.0" prefWidth="485.0" visible="false">
+         <children>
+            <ListView fx:id="Listview1" layoutX="60.0" layoutY="55.0" prefHeight="143.0" prefWidth="371.0" />
+            <TextField fx:id="Comfield" layoutX="60.0" layoutY="14.0" prefHeight="48.0" prefWidth="371.0" />
+            <Button fx:id="Send" layoutX="431.0" layoutY="14.0" mnemonicParsing="false" onAction="#Sending" prefHeight="48.0" prefWidth="58.0" styleClass="btn" stylesheets="@cardDesign.css" text="Send" />
+            <Button fx:id="exit" layoutX="431.0" layoutY="74.0" mnemonicParsing="false" onAction="#exiting" prefHeight="38.0" prefWidth="58.0" styleClass="btn" stylesheets="@cardDesign.css" text="E" />
+         </children>
+      </AnchorPane>
+    </children>
+    <styleClass>
+        <String fx:value="card" />
+        <String fx:value="shadow" />
+    </styleClass>
+</AnchorPane>

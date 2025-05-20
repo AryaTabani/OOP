@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="nav-form" stylesheets="@mainFormDesign.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projectgraphic.Theme">
+   <children>
+      <Label alignment="CENTER" layoutX="175.0" layoutY="38.0" prefHeight="89.0" prefWidth="251.0" text="Them Select" textFill="RED">
+         <font>
+            <Font name="B Tabassom" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="Theme1" layoutX="49.0" layoutY="217.0" mnemonicParsing="false" onAction="#Theme1" prefHeight="54.0" prefWidth="116.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Theme1" />
+      <Button fx:id="Theme2" layoutX="406.0" layoutY="217.0" mnemonicParsing="false" onAction="#Theme2" prefHeight="54.0" prefWidth="116.0" styleClass="btn" stylesheets="@mainFormDesign.css" text="Theme2" />
+   </children>
+</AnchorPane>

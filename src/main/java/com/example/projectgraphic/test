@@ -1,0 +1,51 @@
+Kamyab Tabani, [6/2/2023 5:08 PM]
+import java.sql.*;
+
+public class Database {
+    public static Connection Con;
+    public static ResultSet Results;
+
+    public static boolean Connect() {
+        try {
+            Con = DriverManager.getConnection("jdbc:mysql://localhost/dbname", "root", "");
+            return Con != null;
+        } catch (Exception e) {
+            System.out.println("error connecting to database");
+        }
+        return false;
+    }
+
+    public static ResultSet RunCommand(String Command) throws SQLException {
+        Results = null;
+        Statement stmt = Con.createStatement();
+        Results = stmt.executeQuery(Command);
+        return Results;
+    }
+}
+
+Kamyab Tabani, [6/2/2023 5:09 PM]
+try {
+            PreparedStatement ps = Database.Con.prepareStatement(
+                    "INSERT INTO Users(fullname, username, password) VALUES (?,?,?)");
+            ps.setString(1, "Pan Xar Ast");
+            ps.setString(2, "Pan123");
+            ps.setString(3, "123456");
+            ps.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("error");
+        }
+
+Kamyab Tabani, [6/2/2023 5:13 PM]
+public static int GetNumberOfUsers() {
+        int count = 0;
+        try {
+            ResultSet r = DataConnector.RunCommand("SELECT * FROM Users");
+            while (r.next()) {
+                count++;
+            }
+            return count;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }

@@ -1,0 +1,36 @@
+if (result.next()) {
+                    alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Information Message");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Successfully Login!");
+                    alert.showAndWait();
+                    if (userType.equals("Restaurant Owner")) {
+                        Parent root = FXMLLoader.load(getClass().getResource("mainform.fxml"));
+                        Stage stage = new Stage();
+                        Scene scene = new Scene(root);
+                        stage.setTitle("Foodi");
+                        stage.setMinWidth(1100);
+                        stage.setMinHeight(600);
+                        stage.setScene(scene);
+                        stage.show();}
+//                    } else if (userType.equals("Customer")) {
+                    else{
+                        Parent root = FXMLLoader.load(getClass().getResource("Custom.fxml"));
+                        Stage stage = new Stage();
+                        Scene scene = new Scene(root);
+                        stage.setTitle("Foodi");
+                        stage.setMinWidth(1100);
+                        stage.setMinHeight(600);
+                        stage.setScene(scene);
+                        stage.show();
+                    }
+
+
+
+                    int time = Graph.calculateTime(firstNode,secondNode);
+                    Graph.showMap();
+                    Graph.showPath(nodeID,findRestaurantByOrderID(((Normal)User.loggedInUser).deliver.ID).location.ID);
+                      Graph.showPath(nodeID,findUserByOrder(((Normal)User.loggedInUser).deliver.ID).location.ID);
+                       Graph.readGraph();
+                               Graph.readLocations();
+                       Graph.showPath(((Normal) User.loggedInUser).location.ID, findRestaurantByOrderID(((Normal)User.loggedInUser).deliver.ID).location.ID);
